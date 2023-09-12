@@ -74,5 +74,6 @@ npm i bcrypt mongoose mongodb next-auth
 -   2 ways of managing Meta Data
     [1] Static Metadata
     [2] Dynamic Metadata
+-   Able to use 'getProviders' from next-auth/react
 
 ---
