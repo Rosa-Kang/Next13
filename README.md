@@ -44,11 +44,11 @@ npm i bcrypt mongoose mongodb next-auth
 
 ## About The Project
 
-[Demo link](https://heuristic-wozniak-124f11.netlify.app)
+[Demo link]()
 
 ### Page Look
 
-![Screen Shot 2021-04-22 at 4 02 01 PM](https://user-images.githubusercontent.com/49248131/115795678-3760ca00-a385-11eb-984a-ab3adb69ff7f.png)
+![Screen Shot ]()
 
 ---
 
@@ -56,8 +56,8 @@ npm i bcrypt mongoose mongodb next-auth
 
 ---
 
-1. Click on the Button to refresh and get new advise
-2. axios.get().then() and DidMount to update the state.data
+1.  
+2.  
 
 ---
 
