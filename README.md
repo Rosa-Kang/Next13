@@ -76,4 +76,7 @@ npm i bcrypt mongoose mongodb next-auth
     [2] Dynamic Metadata
 -   Able to use 'getProviders' from next-auth/react
 
+## Error log
+[Error checking if user exists:  StringQuery: "StringQuery" is not a valid option to set]
+
 ---

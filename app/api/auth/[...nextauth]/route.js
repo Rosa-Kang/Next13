@@ -7,8 +7,15 @@ import { connectToDB } from '@utils/database';
 const handler = NextAuth({
     providers: [
         GoogleProvider({
-            clientId: process.env.GOOGLE_ID,
+            clientId: process.env.GOOGLE_CLIENT_ID,
             clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+            authorization: {
+                params: {
+                    prompt: 'consent',
+                    access_type: 'offline',
+                    response_type: 'code',
+                },
+            },
         }),
     ],
     callbacks: {
@@ -30,7 +37,7 @@ const handler = NextAuth({
                 if (!userExists) {
                     await User.create({
                         email: profile.email,
-                        username: profile.name.replace(' ', '').toLowerCase(),
+                        username: profile.name.replace(/\s/g, '').toLowerCase(),
                         image: profile.picture,
                     });
                 }
