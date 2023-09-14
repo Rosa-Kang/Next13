@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
+const Form = ({ type, post, setPost, submitting, label, handleSubmit }) => {
     return (
         <section className="w-full max-w-full flex-start flex-col">
             <h1 className="head_text text-left">
@@ -20,7 +20,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
                         Tag {` `} <span className="font-normal">(#product, #webdevelopment, #idea)</span>
                     </span>
 
-                    <input value={post.tag} onChange={(e) => setPost({ ...post, tag: e.target.value })} placeholder="#tag" required className="form_input" />
+                    <input value={post.tag} onChange={(e) => setPost({ ...post, tag: e.target.value.split(',') })} placeholder="#tag" required className="form_input" />
                 </label>
 
                 <div className="flex-end mx-3 mb-5 gap-4">
@@ -28,8 +28,8 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
                         Cancel
                     </Link>
 
-                    <button type="submit" disabled={submitting} className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white">
-                        {submitting ? `${type}...` : type}
+                    <button type="Submit" disabled={submitting} className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white">
+                        {submitting ? `${label}ing...` : label}
                     </button>
                 </div>
             </form>
