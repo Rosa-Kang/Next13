@@ -79,4 +79,11 @@ npm i bcrypt mongoose mongodb next-auth
 ## Error log
 [Error checking if user exists:  StringQuery: "StringQuery" is not a valid option to set]
 
+- [1] took me 2days to resolve the issue. The issue was below line in database.js 
+```
+mongoose.set('strictQuery', true);
+```
+I had stringQuery but not the strictQuery and it was causing the error.
+
+When strict option is set to true , Mongoose will ensure that only the fields that are specified in your Schema will be saved in the database, and all other fields will not be saved
 ---
