@@ -3,8 +3,8 @@ import Provider from '@components/Provider';
 import '@styles/global.css';
 
 export const metadata = {
-    title: 'Promptopia',
-    description: 'Discover & Share prompt',
+    title: "Rosa's Computer Science Blogs",
+    description: 'Discover & Share Your Learning Journey',
 };
 
 const RootLayout = ({ children }) => {
