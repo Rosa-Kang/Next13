@@ -44,7 +44,7 @@ npm i bcrypt mongoose mongodb next-auth
 
 ## About The Project
 
-![Demo link](next13-rosa-kang.vercel.app)
+([Demo link](https://myblogs-rosa.vercel.app/))
 
 ### Page Look
 
