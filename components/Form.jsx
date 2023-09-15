@@ -17,10 +17,10 @@ const Form = ({ type, post, setPost, submitting, label, handleSubmit }) => {
                 </label>
                 <label htmlFor="">
                     <span className="font-satoshi font-semibold text-base text-gray-700">
-                        Tag {` `} <span className="font-normal">(#product, #webdevelopment, #idea)</span>
+                        Tag {` `} <span className="font-normal">(enter tags with comma & space)</span>
                     </span>
 
-                    <input value={post.tag} onChange={(e) => setPost({ ...post, tag: e.target.value.split(',') })} placeholder="#tag" required className="form_input" />
+                    <input value={post.tag} onChange={(e) => setPost({ ...post, tag: e.target.value.split(',') })} placeholder="tag" required className="form_input" />
                 </label>
 
                 <div className="flex-end mx-3 mb-5 gap-4">

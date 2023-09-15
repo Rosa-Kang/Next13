@@ -56,8 +56,9 @@ npm i bcrypt mongoose mongodb next-auth
 
 ---
 
-1.  
-2.  
+1.  Google oAuth Login Feature.
+2.  Search Functionality.
+3.  CRUD(Create, Read, Update, Delete) Features.
 
 ---
 
