@@ -48,7 +48,8 @@ npm i bcrypt mongoose mongodb next-auth
 
 ### Page Look
 
-![Screen Shot ]()
+![Screen Shot ](https://github.com/Rosa-Kang/Next13/assets/49248131/80658b4e-4183-4837-87a1-c983106cf3b7)
+
 
 ---
 
