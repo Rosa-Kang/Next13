@@ -14,7 +14,7 @@ const Form = ({ type, post, setPost, submitting, label, handleSubmit }) => {
                 <label htmlFor="">
                     <span className="font-satoshi font-semibold text-base text-gray-700">Your Discovery today</span>
 
-                    <textarea value={post.prompt} onChange={(e) => setPost({ ...post, prompt: e.target.value })} placeholder="Write your prompt" required className="form_textarea" />
+                    <textarea value={post.prompt} onChange={(e) => setPost({ ...post, prompt: e.target.value })} placeholder="Share what you learned" required className="form_textarea" />
                 </label>
                 <label htmlFor="">
                     <FileBase type="file" multiple={false} onDone={({ base64 }) => setPost({ ...postData, selectedFile: base64 })} />

@@ -12,6 +12,7 @@ const CreatePrompt = () => {
     const [post, setPost] = useState({
         prompt: '',
         tag: '',
+        selectedFile: '',
     });
 
     const createPrompt = async (e) => {
@@ -25,6 +26,7 @@ const CreatePrompt = () => {
                     prompt: post.prompt,
                     userId: session?.user.id,
                     tag: post.tag,
+                    selectedFile: post.selectedFile,
                 }),
             });
 
