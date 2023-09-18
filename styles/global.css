@@ -71,7 +71,7 @@
 }
 
 .black_btn {
-    @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+    @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-[#E15487] hover:border-[#E15487] text-center text-sm font-inter flex items-center justify-center;
 }
 
 .outline_btn {
@@ -130,7 +130,7 @@
 
 /* Nav Component */
 .logo_text {
-    @apply max-sm:hidden font-satoshi font-semibold text-lg text-black tracking-wide;
+    @apply max-sm:hidden font-satoshi font-semibold text-lg text-[#E15487] tracking-wide;
 }
 
 .dropdown {

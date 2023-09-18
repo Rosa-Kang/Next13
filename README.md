@@ -1,4 +1,4 @@
-# Promptopia
+# Dev Blog Application
 
 The project is bootstrapped with [Create Next App].
 Fullstack Next.js 13 CRUD Application

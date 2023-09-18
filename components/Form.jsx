@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import FileBase from 'react-file-base64';
 
 const Form = ({ type, post, setPost, submitting, label, handleSubmit }) => {
     return (
@@ -11,9 +12,13 @@ const Form = ({ type, post, setPost, submitting, label, handleSubmit }) => {
 
             <form onSubmit={handleSubmit} className="mt-10 w-full max-w-2xl flex flex-col gap-7 glassmorphism">
                 <label htmlFor="">
-                    <span className="font-satoshi font-semibold text-base text-gray-700">Your AI Prompt</span>
+                    <span className="font-satoshi font-semibold text-base text-gray-700">Your Discovery today</span>
 
                     <textarea value={post.prompt} onChange={(e) => setPost({ ...post, prompt: e.target.value })} placeholder="Write your prompt" required className="form_textarea" />
+                </label>
+                <label htmlFor="">
+                    <span className="font-satoshi">Image</span>
+                    <FileBase type="file" multiple={false} onDone={({ base64 }) => setPost({ ...postData, selectedFile: base64 })} />
                 </label>
                 <label htmlFor="">
                     <span className="font-satoshi font-semibold text-base text-gray-700">
