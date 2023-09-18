@@ -16,7 +16,7 @@ export const GET = async (request, { params }) => {
 
 // PATCH (update)
 export const PATCH = async (request, { params }) => {
-    const { prompt, tag } = await request.json();
+    const { prompt, tag, selectedFile } = await request.json();
 
     try {
         await connectToDB();
@@ -27,6 +27,7 @@ export const PATCH = async (request, { params }) => {
 
         existingPrompt.prompt = prompt;
         existingPrompt.tag = tag;
+        existingPrompt.selectedFile = selectedFile;
 
         await existingPrompt.save();
 

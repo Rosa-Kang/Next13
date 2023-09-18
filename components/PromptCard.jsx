@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 import { usePathname, useRouter } from 'next/navigation';
 
-const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
+const PromptCard = ({ key, post, handleEdit, handleDelete, handleTagClick }) => {
     const { data: session } = useSession();
     const pathName = usePathname();
     const router = useRouter();
@@ -13,6 +13,10 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
     const [copied, setCopied] = useState('');
 
     console.log(post);
+
+    const handlePromptClick = () => {
+        router.push(`/posts/${post._id}`);
+    };
 
     const handleProfileClick = () => {
         if (post.creator._id === session?.user.id) return router.push('/profile');
@@ -27,8 +31,9 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
     };
 
     return (
-        <div className="prompt_card">
-            {/* <Image src={post.} alt="user_image" width={340} height={340} className="object-cover"/> */}
+        <div className="prompt_card" key={key}>
+            {post.selectedFile && <Image onClick={handlePromptClick} src={post.selectedFile} alt="user_image" width={340} height={340} className="prompt-hover object-cover mb-4" />}
+
             <div className="flex justify-between items-start gap-5">
                 <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer" onClick={handleProfileClick}>
                     <Image src={post.creator.image} alt="user_image" width={40} height={40} className="rounded-full object-contain" />
@@ -44,7 +49,9 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
                 </div>
             </div>
 
-            <p className="my-4 font-satoshi text-sm text-gray-700">{post.prompt.substr(0, 150)}</p>
+            <div className="prompt-hover" onClick={handlePromptClick}>
+                <p className="my-4 font-satoshi text-sm text-gray-700">{post.prompt.substr(0, 150)}</p>
+            </div>
             {post.tag.map((item) => (
                 <span className="font-inter text-sm blue_gradient cursor-pointer" onClick={() => handleTagClick && handleTagClick(item)}>
                     #{item.trim(' ') + ' '}

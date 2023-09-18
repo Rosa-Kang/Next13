@@ -161,3 +161,6 @@
 .flex-between {
     @apply flex justify-between items-center;
 }
+.prompt-hover{
+    @apply hover:cursor-pointer;
+}
