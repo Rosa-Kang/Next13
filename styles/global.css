@@ -164,3 +164,6 @@
 .prompt-hover{
     @apply hover:cursor-pointer;
 }
+.post_thumbnail{
+    @apply mx-auto;
+}

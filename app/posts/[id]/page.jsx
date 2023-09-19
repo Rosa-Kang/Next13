@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 const PromptPage = ({ params }) => {
     const [post, setPost] = useState(null);
+    const [readingTime, setReadingTime] = useState(0);
 
     const fetchPosts = async () => {
         const response = await fetch(`/api/prompt`);
@@ -20,11 +21,18 @@ const PromptPage = ({ params }) => {
         <article>
             {post && (
                 <div className="post-container">
-                    {post.selectedFile && <Image src={post.selectedFile} width={450} height={450} className="object-cover" />}
-                    <h1>{post.creator && post.creator.username}</h1>
+                    {post.selectedFile && <Image src={post.selectedFile} alt="post_thumbnail" width={450} height={450} className="object-cover mx-auto" />}
 
-                    <div>
-                        <p>{post.prompt}</p>
+                    <div className="px-4 md:px-32">
+                        <h1 className="text-[#E15487] mb-4 text-right">Written by {post.creator && post.creator.username}</h1>
+
+                        <div>
+                            {post.prompt.split('\n').map((line, index) => (
+                                <div key={index} className="mb-4">
+                                    {line}
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             )}
