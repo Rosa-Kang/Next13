@@ -12,8 +12,6 @@ const PromptCard = ({ key, post, handleEdit, handleDelete, handleTagClick }) => 
 
     const [copied, setCopied] = useState('');
 
-    console.log(post);
-
     const handlePromptClick = () => {
         router.push(`/posts/${post._id}`);
     };
@@ -30,9 +28,11 @@ const PromptCard = ({ key, post, handleEdit, handleDelete, handleTagClick }) => 
         setTimeout(() => setCopied(false), 3000);
     };
 
+    console.log(post);
+
     return (
         <div className="prompt_card" key={key}>
-            {post.selectedFile && <Image onClick={handlePromptClick} src={post.selectedFile} alt="user_image" height={190} width={190} className="prompt-hover object-cover mb-4 mx-auto" />}
+            {post.selectedFile && <Image onClick={handlePromptClick} src={post.selectedFile} alt="user_image" height={150} width={210} className="prompt-hover object-cover mb-4 mx-auto" />}
 
             <div className="flex justify-between items-start gap-5">
                 <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer" onClick={handleProfileClick}>

@@ -13,6 +13,7 @@ const CreatePrompt = () => {
         prompt: '',
         tag: '',
         selectedFile: '',
+        createdAt: '',
     });
 
     const createPrompt = async (e) => {
@@ -27,6 +28,7 @@ const CreatePrompt = () => {
                     userId: session?.user.id,
                     tag: post.tag,
                     selectedFile: post.selectedFile,
+                    createdAt: post.createdAt,
                 }),
             });
 

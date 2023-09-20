@@ -11,7 +11,7 @@ const UpdatePrompt = () => {
     console.log(searchParams);
     const promptId = searchParams.get('id');
 
-    const [post, setPost] = useState({ prompt: '', tag: '', selectedFile: '' });
+    const [post, setPost] = useState({ prompt: '', tag: '', selectedFile: '', createdAt: '' });
     const [submitting, setIsSubmitting] = useState(false);
 
     useEffect(() => {
@@ -23,6 +23,7 @@ const UpdatePrompt = () => {
                 prompt: data.prompt,
                 tag: data.tag,
                 selectedFile: data.selectedFile,
+                createdAt: data.createdAt,
             });
         };
 

@@ -17,6 +17,10 @@ const PromptSchema = new Schema({
         type: String,
         required: [false],
     },
+    createdAt: {
+        type: Date,
+        default: new Date(),
+    },
 });
 
 const Prompt = models.Prompt || model('Prompt', PromptSchema);
