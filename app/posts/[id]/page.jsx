@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 
 const PromptPage = ({ params }) => {
     const [post, setPost] = useState(null);
-    const [readingTime, setReadingTime] = useState(0);
 
     const fetchPosts = async () => {
         const response = await fetch(`/api/prompt`);
