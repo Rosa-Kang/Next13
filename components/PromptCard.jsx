@@ -28,8 +28,6 @@ const PromptCard = ({ key, post, handleEdit, handleDelete, handleTagClick }) => 
         setTimeout(() => setCopied(false), 3000);
     };
 
-    console.log(post);
-
     return (
         <div className="prompt_card" key={key}>
             {post.selectedFile && <Image onClick={handlePromptClick} src={post.selectedFile} alt="user_image" height={150} width={210} className="prompt-hover object-cover mb-4 mx-auto" />}
@@ -41,6 +39,7 @@ const PromptCard = ({ key, post, handleEdit, handleDelete, handleTagClick }) => 
                     <div className="flex flex-col">
                         <h3 className="font-satoshi font-semibold text-gray-900">{post.creator.username}</h3>
                         <p className="font-inter text-sm text-gray-500">{post.creator.email}</p>
+                        <p className="font-inter text-sm text-gray-500">{post.createdAt.substring(0, 10)}</p>
                     </div>
                 </div>
 

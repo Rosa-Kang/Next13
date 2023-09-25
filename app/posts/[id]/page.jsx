@@ -23,7 +23,10 @@ const PromptPage = ({ params }) => {
                     {post.selectedFile && <Image src={post.selectedFile} alt="post_thumbnail" width={450} height={450} className="object-cover mx-auto" />}
 
                     <div className="px-4 md:px-32">
-                        <h1 className="text-[#E15487] mb-4 text-right">Written by {post.creator && post.creator.username}</h1>
+                        <div className="flex justify-between">
+                            <h1 className="text-[#E15487] mb-4 text-right">Written by {post.creator && post.creator.username}</h1>
+                            <p className="mb-4 text-right">{post.createdAt && post.createdAt.substring(0, 10)}</p>
+                        </div>
 
                         <div>
                             {post.prompt.split('\n').map((line, index) => (
