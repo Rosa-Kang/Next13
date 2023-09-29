@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useSession } from 'next-auth/react';
 import { usePathname, useRouter } from 'next/navigation';
 
-const PromptCard = ({ key, post, handleEdit, handleDelete, handleTagClick }) => {
+const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
     const { data: session } = useSession();
     const pathName = usePathname();
     const router = useRouter();
@@ -28,7 +28,7 @@ const PromptCard = ({ key, post, handleEdit, handleDelete, handleTagClick }) => 
     };
 
     return (
-        <div className="prompt_card" key={key}>
+        <div className="prompt_card" key={post.creator._id}>
             {post.selectedFile && <Image onClick={handlePromptClick} src={post.selectedFile} alt="user_image" height={150} width={210} className="prompt-hover object-cover mb-4 mx-auto" />}
 
             <div className="flex justify-between items-start gap-5">
