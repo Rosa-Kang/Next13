@@ -28,7 +28,7 @@ const CreatePrompt = () => {
                     userId: session?.user.id,
                     tag: post.tag,
                     selectedFile: post.selectedFile,
-                    createdAt: post.createdAt,
+                    createdAt: new Date().toISOString(),
                 }),
             });
 
